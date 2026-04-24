@@ -1,0 +1,332 @@
+.dashboard-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.dash-header {
+  margin-bottom: 20px;
+}
+
+.dash-header h2 {
+  font-size: 22px;
+  color: #333;
+}
+
+.dash-subtitle {
+  font-size: 14px;
+  color: #999;
+  margin-top: 4px;
+}
+
+/* 概览卡片 */
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.dash-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.15s;
+}
+
+.dash-card:hover {
+  transform: translateY(-2px);
+}
+
+.dash-card-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.dash-card-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+}
+
+.dash-card-label {
+  font-size: 12px;
+  color: #999;
+  margin-top: 2px;
+}
+
+/* 内容区 */
+.dash-content {
+  display: flex;
+  gap: 16px;
+}
+
+.dash-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.dash-sidebar {
+  width: 340px;
+  flex-shrink: 0;
+}
+
+.dash-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.dash-panel h3 {
+  font-size: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 事件分布 */
+.event-distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dist-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dist-label {
+  width: 120px;
+  font-size: 13px;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.dist-bar-wrap {
+  flex: 1;
+  height: 20px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dist-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff8200, #ff3860);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  min-width: 4px;
+}
+
+.dist-count {
+  width: 40px;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 实时事件流 */
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #ff3860;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.event-stream {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  font-size: 13px;
+  transition: background 0.15s;
+}
+
+.event-item:hover {
+  background: #f8f8f8;
+}
+
+.event-type-tag {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #f0f0f0;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.event-item.page_view .event-type-tag { background: #e3f2fd; color: #1565c0; }
+.event-item.page_stay .event-type-tag { background: #fff3e0; color: #e65100; }
+.event-item.post_click .event-type-tag { background: #fce4ec; color: #c62828; }
+.event-item.post_exposure .event-type-tag { background: #e8f5e9; color: #2e7d32; }
+.event-item.post_read .event-type-tag { background: #f3e5f5; color: #6a1b9a; }
+.event-item.action_click .event-type-tag { background: #fff8e1; color: #f57f17; }
+.event-item.scroll_depth .event-type-tag { background: #e0f7fa; color: #00695c; }
+.event-item.session .event-type-tag { background: #eceff1; color: #37474f; }
+
+.event-detail {
+  flex: 1;
+  display: flex;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.event-page, .event-post, .event-duration, .event-action, .event-depth {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.event-duration { background: #fff3e0; color: #e65100; }
+.event-action { background: #fce4ec; color: #c62828; }
+.event-depth { background: #e0f7fa; color: #00695c; }
+
+.event-time {
+  font-size: 11px;
+  color: #999;
+  flex-shrink: 0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.empty-state .hint {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* SDK架构图 */
+.sdk-arch {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+}
+
+.sdk-arch h3 {
+  color: #fff;
+}
+
+.arch-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.arch-layer {
+  text-align: center;
+  width: 100%;
+}
+
+.arch-box {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.arch-box.primary { background: #ff8200; color: #fff; }
+.arch-box.secondary { background: #2d3748; color: #e2e8f0; border: 1px solid #4a5568; }
+.arch-box.accent { background: #38a169; color: #fff; }
+.arch-box.dark { background: #4a5568; color: #e2e8f0; }
+
+.arch-desc {
+  font-size: 11px;
+  color: #a0aec0;
+  margin-top: 2px;
+}
+
+.arch-arrow {
+  color: #718096;
+  font-size: 14px;
+}
+
+/* 性能策略 */
+.perf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.perf-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.perf-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.perf-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.perf-desc {
+  font-size: 12px;
+  color: #888;
+  margin-top: 1px;
+}
+
+/* 能力表格 */
+.cap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.cap-table th {
+  text-align: left;
+  padding: 6px 8px;
+  background: #f5f5f5;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.cap-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .dash-sidebar {
+    display: none;
+  }
+  .dash-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
