@@ -63,7 +63,7 @@ class EventBuffer {
 
   push(event) {
     if (this.queue.length >= this.maxSize) {
-      this.flush()
+      this.drain()
     }
     this.queue.push(event)
   }
@@ -585,7 +585,7 @@ class WeiboTracker {
   }
 }
 
-// 单例导出
+// Single-instance export (module-level to share across tests)
 let instance = null
 
 export function createTracker(config) {
@@ -599,4 +599,10 @@ export function getTracker() {
   return instance
 }
 
+// Reset singleton – used in tests
+export function resetTrackerInstance() {
+  instance = null
+}
+
 export default WeiboTracker
+export { EventBuffer, OfflineStore, ReadTimer, ScrollDepthTracker, ExposureObserver }
